@@ -37,7 +37,7 @@
   ],
   "scripts": {
     "check": "node --check index.js && node --check client.js",
-    "test": "node tools/host-test.mjs"
+    "test": "node tools/host-test.mjs && node tools/package-test.mjs"
   },
   "dsh": {
     "bundle": {

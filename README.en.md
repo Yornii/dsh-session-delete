@@ -112,6 +112,7 @@ The failure path is safe: if validation fails, removal throws, or the plugin unl
 | `locale/*.json` | Plugin metadata (title and description) in Chinese and English |
 | `icon.svg` | Plugin icon |
 | `tools/host-test.mjs` | Offline Host-half test using a temporary directory and fake services |
+| `tools/package-test.mjs` | Package-metadata consistency test: name, module id, bundle patch, exports, locales and files |
 
 Host services: `commands`, `sessions`, `sessionPersistence`, `workspaceRegistry`.
 Client services: `slots`, `locale`, `sessions`, `remote`, `remote.commands`.
@@ -121,10 +122,10 @@ Slots: `sidebar.workspaces.session.row.action` (id `archive`, priority `-1`, rep
 
 ```bash
 npm run check          # syntax: node --check index.js && node --check client.js
-npm test               # 19 offline Host assertions using a temporary directory and fake services
+npm test               # 19 Host assertions + 20 package-metadata checks
 ```
 
-`tools/host-test.mjs` needs no browser or real DSH. It covers cold-Session deletion, archiving and idle-waiting for a live Session, refusal of a foreign ID, unknown Sessions, refusing a directory with unrelated files while rolling the archive back, immediate announcement for a memory-only Session, treating `session.lock` / `*.tmp` as Session artifacts, and refusing non-jsonl stores.
+`tools/host-test.mjs` needs no browser or real DSH. It covers cold-Session deletion, archiving and idle-waiting for a live Session, refusal of a foreign ID, unknown Sessions, refusing a directory with unrelated files while rolling the archive back, immediate announcement for a memory-only Session, treating `session.lock` / `*.tmp` as Session artifacts, and refusing non-jsonl stores. `tools/package-test.mjs` keeps the package name, Client module id, bundle patch, `exports`, locales and `files` in sync, so a rename cannot leave one of them behind.
 
 Manual acceptance:
 

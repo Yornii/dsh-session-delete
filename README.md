@@ -112,6 +112,7 @@ dsh plugin --profile web add ./dsh-session-delete
 | `locale/*.json` | 插件元数据的中英文标题与描述 |
 | `icon.svg` | 插件图标 |
 | `tools/host-test.mjs` | Host 半离线测试，用临时目录和假服务覆盖删除与拒绝路径 |
+| `tools/package-test.mjs` | 包元数据一致性测试：包名、模块 id、bundle patch、exports、locale 与 files |
 
 Host 注入的服务：`commands`、`sessions`、`sessionPersistence`、`workspaceRegistry`。
 Client 注入的服务：`slots`、`locale`、`sessions`、`remote`、`remote.commands`。
@@ -121,10 +122,10 @@ Client 注入的服务：`slots`、`locale`、`sessions`、`remote`、`remote.co
 
 ```bash
 npm run check          # 语法检查：node --check index.js && node --check client.js
-npm test               # Host 半离线测试：19 项断言，使用临时目录和假服务
+npm test               # 19 项 Host 断言 + 20 项包元数据一致性检查
 ```
 
-`tools/host-test.mjs` 不依赖浏览器或真实 DSH，覆盖：冷会话删除、运行中会话先归档并等待空闲、外部 ID 拒绝、未知会话、目录中混入无关文件时拒绝并回滚归档、内存会话立即广播、`session.lock` / `*.tmp` 视为会话产物、非 jsonl 存储拒绝。
+`tools/host-test.mjs` 不依赖浏览器或真实 DSH，覆盖：冷会话删除、运行中会话先归档并等待空闲、外部 ID 拒绝、未知会话、目录中混入无关文件时拒绝并回滚归档、内存会话立即广播、`session.lock` / `*.tmp` 视为会话产物、非 jsonl 存储拒绝。`tools/package-test.mjs` 校验包名、Client 模块 id、bundle patch、`exports`、locale 与 `files` 是否一致，防止重命名后各处名字不同步。
 
 手工验收：
 
