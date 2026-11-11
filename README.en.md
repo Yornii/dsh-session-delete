@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="dsh-session-delete — permanently delete a Session from the sidebar">
+  <img src="https://raw.githubusercontent.com/Yornii/dsh-session-delete/main/assets/banner.svg" alt="dsh-session-delete — permanently delete a Session from the sidebar">
 </p>
 
 <p align="center">

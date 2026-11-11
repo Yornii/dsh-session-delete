@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="dsh-session-delete — 从侧边栏永久删除会话">
+  <img src="https://raw.githubusercontent.com/Yornii/dsh-session-delete/main/assets/banner.svg" alt="dsh-session-delete — 从侧边栏永久删除会话">
 </p>
 
 <p align="center">
