@@ -30,6 +30,20 @@ DSH 侧边栏原本只提供「归档」——会话从列表里消失，但 `js
 | 中英双语 | 跟随 DSH 语言设置，界面文案内置 zh / en 两套 |
 | 主题一致 | 样式全部使用 DSH 主题变量，明暗主题都正常 |
 
+## 🖼️ 界面
+
+侧边栏会话行悬停时，垃圾桶会替换原来的「归档」按钮：
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Yornii/dsh-session-delete/main/assets/delete-button.png" alt="侧边栏会话行上的删除按钮">
+</p>
+
+点击后弹出二次确认，说明该会话连同保存的记录会被永久删除、无法恢复：
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Yornii/dsh-session-delete/main/assets/delete-confirm.png" alt="删除确认弹窗">
+</p>
+
 ## 📦 安装
 
 要求：DSH 0.2.x 的 Web profile（在 0.2.2-rc.1 上开发验证）；插件同时包含 Host 与 Client 两半，必须装进正在提供 Web 界面的那个 profile。

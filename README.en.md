@@ -30,6 +30,20 @@ This plugin adds the missing step: trash icon on the row → confirm → the Hos
 | Bilingual | Ships Simplified Chinese and English dictionaries and follows the DSH locale |
 | Theme-aware | All styles use DSH theme variables, so light and dark themes both work |
 
+## 🖼️ Screenshots
+
+Hovering a Session row swaps the shipped archive button for the trash icon:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Yornii/dsh-session-delete/main/assets/delete-button.png" alt="Delete button on a sidebar Session row">
+</p>
+
+Clicking it opens a confirmation that spells out the permanent removal of the Session and its saved history:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Yornii/dsh-session-delete/main/assets/delete-confirm.png" alt="Delete confirmation dialog">
+</p>
+
 ## 📦 Install
 
 Requirements: a DSH 0.2.x web profile (developed and verified on 0.2.2-rc.1). The plugin has both a Host and a Client half and must be installed into the profile that serves the web UI.
