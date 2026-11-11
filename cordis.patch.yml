@@ -1,0 +1,6 @@
+# Session delete bundle: the Host half registers the `delete-session` command and
+# removes the validated session directory; the Client half replaces the sidebar
+# row's archive button with a confirmed delete action.
+- insert:
+    - id: dsh-session-delete
+      name: '@yornii/dsh-session-delete'

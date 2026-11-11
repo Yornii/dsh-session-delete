@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session delete",
+    "description": "Permanently delete a session from the sidebar, replacing the row archive button."
+  }
+}

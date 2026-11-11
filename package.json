@@ -1,0 +1,57 @@
+{
+  "name": "@yornii/dsh-session-delete",
+  "version": "1.0.0",
+  "description": "Permanently delete a Session from the DeepSeek Harness sidebar: the row's archive button becomes a delete action with an in-app confirmation, and the Host stops live work, validates the session directory and removes its saved history.",
+  "license": "MIT",
+  "author": "Yornii",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yornii/dsh-session-delete.git"
+  },
+  "homepage": "https://github.com/Yornii/dsh-session-delete",
+  "bugs": {
+    "url": "https://github.com/Yornii/dsh-session-delete/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "session",
+    "session-delete",
+    "delete-session"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "scripts": {
+    "check": "node --check index.js && node --check client.js",
+    "test": "node tools/host-test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
+    }
+  }
+}

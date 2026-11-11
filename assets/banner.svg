@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360" role="img" aria-label="dsh-session-delete — permanently delete a Session from the DeepSeek Harness sidebar">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14161d"/>
+      <stop offset="0.55" stop-color="#191d27"/>
+      <stop offset="1" stop-color="#241a20"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="84" y1="96" x2="212" y2="224" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff7a6b"/>
+      <stop offset="1" stop-color="#d63a52"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d63a52" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#d63a52" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <circle cx="1040" cy="86" r="260" fill="url(#glow)"/>
+
+  <g opacity="0.16" stroke="#ffffff" stroke-width="1">
+    <path d="M0 300h1200M0 240h1200M0 180h1200M0 120h1200M0 60h1200"/>
+    <path d="M120 0v360M240 0v360M360 0v360M480 0v360M600 0v360M720 0v360M840 0v360M960 0v360M1080 0v360"/>
+  </g>
+
+  <g transform="translate(64 96)">
+    <rect width="128" height="128" rx="32" fill="url(#tile)"/>
+    <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M35 47h58"/>
+      <path d="M51 47v-7a7 7 0 0 1 7-7h12a7 7 0 0 1 7 7v7"/>
+      <path d="M43 47l3.6 48a8 8 0 0 0 8 7.4h19.8a8 8 0 0 0 8-7.4L86 47"/>
+      <path d="M57 62v24M71 62v24"/>
+    </g>
+  </g>
+
+  <g font-family="Inter, 'Segoe UI', system-ui, -apple-system, sans-serif">
+    <text x="232" y="146" fill="#ffffff" font-size="58" font-weight="700" letter-spacing="-1">dsh-session-delete</text>
+    <text x="234" y="192" fill="#b7bfce" font-size="24">Permanently delete a Session and its history</text>
+    <g font-size="17" font-weight="600">
+      <rect x="234" y="224" width="188" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.16"/>
+      <text x="328" y="249" fill="#dfe4ec" text-anchor="middle">DeepSeek Harness</text>
+      <rect x="434" y="224" width="168" height="38" rx="19" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.16"/>
+      <text x="518" y="249" fill="#dfe4ec" text-anchor="middle">Web client plugin</text>
+      <rect x="614" y="224" width="86" height="38" rx="19" fill="#d63a52" fill-opacity="0.18" stroke="#ff7a6b" stroke-opacity="0.42"/>
+      <text x="657" y="249" fill="#ff9b8f" text-anchor="middle">MIT</text>
+    </g>
+  </g>
+
+  <g transform="translate(820 118)">
+    <rect width="316" height="124" rx="18" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
+    <g font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+      <circle cx="34" cy="44" r="9" fill="#7c8798"/>
+      <rect x="54" y="35" width="128" height="11" rx="5.5" fill="#c3cad6" fill-opacity="0.85"/>
+      <rect x="54" y="54" width="84" height="8" rx="4" fill="#7c8798" fill-opacity="0.75"/>
+      <circle cx="34" cy="86" r="9" fill="#7c8798" fill-opacity="0.6"/>
+      <rect x="54" y="77" width="106" height="11" rx="5.5" fill="#c3cad6" fill-opacity="0.5"/>
+      <rect x="54" y="96" width="66" height="8" rx="4" fill="#7c8798" fill-opacity="0.45"/>
+    </g>
+    <g transform="translate(248 30)">
+      <rect width="42" height="42" rx="11" fill="#ffffff" fill-opacity="0.09"/>
+      <g fill="none" stroke="#ff8c80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 14h20"/>
+        <path d="M17 14v-2.4a2.4 2.4 0 0 1 2.4-2.4h3.2a2.4 2.4 0 0 1 2.4 2.4V14"/>
+        <path d="M13.6 14l1.2 15.4a2.8 2.8 0 0 0 2.8 2.6h6.8a2.8 2.8 0 0 0 2.8-2.6L28.4 14"/>
+        <path d="M18.6 19v9M23.4 19v9"/>
+      </g>
+    </g>
+    <rect x="32" y="112" width="0" height="0" fill="none"/>
+  </g>
+</svg>
