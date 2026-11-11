@@ -35,7 +35,7 @@ async function makeSession(id, { lock = false, temp = false } = {}) {
 }
 
 /** Build the smallest context the Host half needs and capture its command. */
-function harness({ live = {}, stored = {}, archived = [], workspaces = [] } = {}) {
+function harness({ live = {}, stored = {}, archived = [], workspaces = [], existing = [] } = {}) {
   const defs = []
   const events = []
   const warns = []
@@ -46,6 +46,11 @@ function harness({ live = {}, stored = {}, archived = [], workspaces = [] } = {}
     },
     commands: {
       register(definition) {
+        if (existing.includes(definition.name)) {
+          throw new Error(
+            `command "${definition.name}" is already registered (for a per-agent variant, mount a command-injected plugin under that agent's \`agent.ctx\`)`,
+          )
+        }
         defs.push(definition)
         return () => {}
       },
@@ -66,8 +71,13 @@ function harness({ live = {}, stored = {}, archived = [], workspaces = [] } = {}
     logger: { warn: (message) => warns.push(message) },
     emit: (name, id) => events.push([name, id]),
   }
-  apply(ctx)
-  return { command: defs[0], events, warns, archived }
+  let loadError
+  try {
+    apply(ctx)
+  } catch (cause) {
+    loadError = cause
+  }
+  return { command: defs[0], events, warns, archived, loadError }
 }
 
 /** Execute one command run against a harness. */
@@ -173,6 +183,18 @@ async function run(command, id, input = id, whenIdle = async () => {}) {
   const { command } = harness({ stored: { sql1: { location: { kind: 'sqlite', path: join(root, 'sql1') } } } })
   const result = await run(command, 'sql1')
   check('store: non-jsonl is an error', result.kind === 'error' && /no deletable file/iu.test(result.text), JSON.stringify(result))
+}
+
+// 9. A command left behind by a stale plugin instance keeps the plugin loading.
+{
+  const { loadError, warns, command } = harness({ existing: ['delete-session'] })
+  check('duplicate: apply does not throw', loadError === undefined, String(loadError))
+  check('duplicate: no second handler replaces the existing one', command === undefined)
+  check(
+    'duplicate: warns about the existing command',
+    warns.some((message) => message.includes('already registered')),
+    JSON.stringify(warns),
+  )
 }
 
 await sleep(300)

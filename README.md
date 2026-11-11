@@ -154,6 +154,7 @@ npm test               # 19 项 Host 断言 + 20 项包元数据一致性检查
 | --- | --- |
 | 侧栏没有垃圾桶 | 插件未启用或 Client 未加载：在插件管理器确认已启用，然后刷新页面 |
 | 提示命令不可用 | Host 半没装进当前 profile，或插件被禁用；确认安装在同一个 profile 后重启 |
+| 日志报 `command "delete-session" is already registered` | 同一个命令被两个插件实例注册，常见于热切换插件后旧实例仍驻留；插件会保留已有处理函数并继续加载，完整退出并重启 DSH 即可清除旧实例 |
 | 报 `refusing to delete ... unexpected entry` | 会话目录里有非会话文件；先手动检查并移走，再重试 |
 | 报 `not a session log file` | 持久化层返回的路径不是 `session*.jsonl*`，属于异常状态，请保留日志反馈 |
 | 点了删除但行还在 | 删除有约 400ms 延迟；稍等或刷新。仍不消失就看 Host 日志里的 `dsh-session-delete:` 警告 |

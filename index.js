@@ -43,15 +43,39 @@ export function apply(ctx) {
     'dsh-session-delete: pending deletions',
   )
   ctx.effect(
-    () =>
-      ctx.commands.register({
-        name: 'delete-session',
-        description: 'Permanently delete this session and its saved history',
-        input: { hint: '<this-session-id>' },
-        handler: (invocation) => deleteSession(ctx, invocation, pending),
-      }),
+    () => {
+      try {
+        return ctx.commands.register({
+          name: 'delete-session',
+          description: 'Permanently delete this session and its saved history',
+          input: { hint: '<this-session-id>' },
+          handler: (invocation) => deleteSession(ctx, invocation, pending),
+        })
+      } catch (cause) {
+        if (!isDuplicateCommand(cause)) throw cause
+        // A previous generation of this plugin (for example the pre-rename
+        // `@local/session-delete` instance) can still be mounted after a live
+        // profile update. The command name is process-global, so keep the
+        // existing handler and the rest of this plugin alive instead of
+        // failing the whole load; restarting DSH drops the stale instance.
+        ctx.logger?.warn?.(
+          'dsh-session-delete: delete-session is already registered; keeping the existing handler (restart DSH to drop a stale plugin instance)',
+        )
+        return () => {}
+      }
+    },
     'dsh-session-delete: delete-session command',
   )
+}
+
+/**
+ * Whether a registration failed only because another plugin instance already
+ * owns this command name.
+ * @param cause - thrown registration error.
+ * @returns true for the command registry's duplicate-name error.
+ */
+function isDuplicateCommand(cause) {
+  return cause instanceof Error && /^command "delete-session" is already registered\b/u.test(cause.message)
 }
 
 /**

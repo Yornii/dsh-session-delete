@@ -154,6 +154,7 @@ Manual acceptance:
 | --- | --- |
 | No trash icon in the sidebar | The plugin is disabled or its Client half did not load; enable it in the plugin manager and reload |
 | "Command unavailable" | The Host half is not installed in the current profile or the plugin is disabled; install it into the same profile and restart |
+| `command "delete-session" is already registered` | Two plugin instances registered the same command, typically a stale instance left by a live plugin swap; the plugin keeps the existing handler and finishes loading — fully quit and restart DSH to drop the stale instance |
 | `refusing to delete ... unexpected entry` | The Session directory contains non-Session files; inspect it, move them away, retry |
 | `not a session log file` | The persistence layer reported a path that is not `session*.jsonl*`; keep the logs and report it |
 | The row is still there right after deleting | Removal is intentionally delayed by ~400ms; wait or reload. If it persists, look for `dsh-session-delete:` warnings in the Host log |
