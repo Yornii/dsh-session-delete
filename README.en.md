@@ -55,7 +55,7 @@ Pick one:
 dsh plugin --profile web add github:Yornii/dsh-session-delete
 
 # Once published to npm
-dsh plugin --profile web add @yornii/dsh-session-delete
+dsh plugin --profile web add @yornni/dsh-session-delete
 ```
 
 Replace `web` with your profile name (the desktop build uses `desktop`). You can also clone the repository and install the local directory:

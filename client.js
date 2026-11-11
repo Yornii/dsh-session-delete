@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: '@yornii/dsh-session-delete',
+  id: '@yornni/dsh-session-delete',
   factory(require) {
     const React = require('react')
     const h = React.createElement
@@ -116,8 +116,8 @@ window.__ModuleLoader__.load({
 
         ctx.effect(() => {
           const tag = document.createElement('style')
-          tag.dataset.plugin = '@yornii/dsh-session-delete'
-          tag.dataset.pluginCss = '@yornii/dsh-session-delete/row+dialog'
+          tag.dataset.plugin = '@yornni/dsh-session-delete'
+          tag.dataset.pluginCss = '@yornni/dsh-session-delete/row+dialog'
           tag.textContent = CSS
           document.head.appendChild(tag)
           return () => {

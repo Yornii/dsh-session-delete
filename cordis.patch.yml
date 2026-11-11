@@ -3,4 +3,4 @@
 # row's archive button with a confirmed delete action.
 - insert:
     - id: dsh-session-delete
-      name: '@yornii/dsh-session-delete'
+      name: '@yornni/dsh-session-delete'

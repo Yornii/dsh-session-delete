@@ -55,7 +55,7 @@ DSH 侧边栏原本只提供「归档」——会话从列表里消失，但 `js
 dsh plugin --profile web add github:Yornii/dsh-session-delete
 
 # 发布到 npm 后
-dsh plugin --profile web add @yornii/dsh-session-delete
+dsh plugin --profile web add @yornni/dsh-session-delete
 ```
 
 `--profile web` 换成你实际使用的 profile 名（桌面版默认是 `desktop`）。也可以克隆仓库后直接安装本地目录：

@@ -1,5 +1,5 @@
 {
-  "name": "@yornii/dsh-session-delete",
+  "name": "@yornni/dsh-session-delete",
   "version": "1.0.1",
   "description": "Permanently delete a Session from the DeepSeek Harness sidebar: the row's archive button becomes a delete action with an in-app confirmation, and the Host stops live work, validates the session directory and removes its saved history.",
   "license": "MIT",

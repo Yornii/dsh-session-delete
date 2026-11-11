@@ -7,7 +7,7 @@
  * global `delete-session` human command, which the plugin's own client half
  * runs against the session being deleted.
  *
- * @module @yornii/dsh-session-delete
+ * @module @yornni/dsh-session-delete
  */
 import { readdir, rm } from 'node:fs/promises'
 import { basename, dirname } from 'node:path'
