@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Yornii/dsh-session-delete/actions/workflows/ci.yml"><img src="https://github.com/Yornii/dsh-session-delete/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/Yornii/dsh-session-delete/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-d63a52" alt="MIT"></a>
   <a href="https://github.com/Yornii/dsh-session-delete"><img src="https://img.shields.io/badge/DSH-plugin-0b7285" alt="DSH plugin"></a>
 </p>
@@ -43,7 +44,7 @@ dsh plugin --profile web add github:Yornii/dsh-session-delete
 dsh plugin --profile web add @yornii/dsh-session-delete
 ```
 
-Replace `web` with your profile name (the desktop build uses `desktop`). You can also clone the repository and install the directory containing `package.json` through the DSH plugin manager:
+Replace `web` with your profile name (the desktop build uses `desktop`). You can also clone the repository and install the local directory:
 
 ```sh
 git clone https://github.com/Yornii/dsh-session-delete.git

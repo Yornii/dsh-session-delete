@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Yornii/dsh-session-delete/actions/workflows/ci.yml"><img src="https://github.com/Yornii/dsh-session-delete/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/Yornii/dsh-session-delete/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-d63a52" alt="MIT"></a>
   <a href="https://github.com/Yornii/dsh-session-delete"><img src="https://img.shields.io/badge/DSH-plugin-0b7285" alt="DSH plugin"></a>
 </p>
@@ -43,7 +44,7 @@ dsh plugin --profile web add github:Yornii/dsh-session-delete
 dsh plugin --profile web add @yornii/dsh-session-delete
 ```
 
-`--profile web` 换成你实际使用的 profile 名（桌面版默认是 `desktop`）。也可以克隆仓库，在 DSH 的插件管理器里安装包含 `package.json` 的目录：
+`--profile web` 换成你实际使用的 profile 名（桌面版默认是 `desktop`）。也可以克隆仓库后直接安装本地目录：
 
 ```sh
 git clone https://github.com/Yornii/dsh-session-delete.git
